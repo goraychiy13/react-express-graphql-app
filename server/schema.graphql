@@ -1,0 +1,28 @@
+type School {
+    id: ID!
+    schoolName: String!
+    totalStudents: String!
+    rating: String!
+    headTeacher: HeadTeacher
+}
+
+input SchoolInput {
+    schoolName: String!
+    rating: String!
+    totalStudents: String!
+}
+
+type HeadTeacher {
+    id: ID!
+    firstName: String!
+    lastName: String!
+}
+
+type Query {
+    getAllSchools: [School]!
+    getSchool(id: ID!): School! 
+}
+
+type Mutation {
+    addNewSchool(school: SchoolInput!): Boolean!
+}
